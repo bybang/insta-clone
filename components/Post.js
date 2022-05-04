@@ -64,7 +64,7 @@ function Post({ id, username, userImg, img, caption }) {
       userImage: session.user.image,
       timestamp: serverTimestamp(),
     })
-  }
+  };
 
   const likePost = async () => {
     if (hasLiked) {
@@ -73,9 +73,8 @@ function Post({ id, username, userImg, img, caption }) {
       await setDoc(doc(db, "posts", id, "likes", session.user.uid), {
         username: session.user.username,
       })
-
     }
-  }
+  };
 
   return (
     <div className="bg-white my-7 border rounded-sm">
