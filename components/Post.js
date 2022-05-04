@@ -43,13 +43,12 @@ function Post({ id, username, userImg, img, caption }) {
 
   // check if user liked the post(depend only on the likes array)
   useEffect(
-    () =>
+    () => {
       // findIndex checks the conditions(predicate) if it couldn't find the index, it will return -1
       setHasLiked(
         likes.findIndex(like => like.id === session?.user?.uid) !== -1
-      ),
-    [likes]
-  );
+      );
+    }, [likes]);
 
   const sendComment = async (e) => {
     e.preventDefault();
